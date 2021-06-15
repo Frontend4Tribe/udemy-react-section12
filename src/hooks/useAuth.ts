@@ -25,12 +25,12 @@ export const useAuth = () => {
             showMessage({ title: "ユーザーが見つかりません", status: "error" });
           }
         })
-        .catch(() => 
-          showMessage({ title: "test", status: "error" });
+        .catch(() =>
+          showMessage({ title: "ログインできません", status: "error" })
         )
         .finally(() => setLoading(false));
     },
-    [history]
+    [history, showMessage]
   );
 
   return { login, loading };
